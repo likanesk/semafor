@@ -26,7 +26,11 @@ class MainActivity : AppCompatActivity() {
             nightMode.setNightMode(orangeView)
         }
 
+        val normalMode: NormalMode = NormalMode()
 
+        playButton.setOnClickListener() {
+            normalMode.setNormalMode(redView, orangeView, greenView)
+        }
 
     }
 

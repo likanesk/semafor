@@ -13,7 +13,6 @@ class NightMode {
     fun setNightMode(orange: ImageView) {
         val colorOrange:Int = Color.parseColor(Colors.ORANGE.rgb);
         val colorGray:Int = Color.parseColor(Colors.GRAY.rgb);
-
         var handler = Handler()
 
         orange.setColorFilter(colorOrange)
