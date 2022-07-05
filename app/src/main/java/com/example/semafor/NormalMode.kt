@@ -15,6 +15,7 @@ class NormalMode(redView: ImageView, orangeView: ImageView, greenView: ImageView
         runnable.run()
     }
 
+    //pre vhodne nastavenie casovych okamihov
     var runnable: Runnable = object : Runnable{
         override fun run() {
             runnable1.run()
@@ -23,6 +24,7 @@ class NormalMode(redView: ImageView, orangeView: ImageView, greenView: ImageView
         }
     }
 
+    //nastavenie cerveneho svetla a nasledne po 5 sekundach aj oranzoveho svetla
     var runnable1: Runnable = object : Runnable {
         override fun run() {
             red.setColorFilter(colorRed)
@@ -36,6 +38,7 @@ class NormalMode(redView: ImageView, orangeView: ImageView, greenView: ImageView
         }
     }
 
+    //nastavenie zeleneho svetla a zrusenie cerveneho a oranzoveho
     var runnable2: Runnable = object : Runnable {
         override fun run() {
             handler.postDelayed({
@@ -47,10 +50,10 @@ class NormalMode(redView: ImageView, orangeView: ImageView, greenView: ImageView
         }
     }
 
+    //nastavenie oranzoveho svetla a zrusenie zeleneho
     var runnable3: Runnable = object : Runnable {
         override fun run() {
             handler.postDelayed({
-                red.setColorFilter(colorGray)
                 orange.setColorFilter(colorOrange)
                 green.setColorFilter(colorGray)
             }, delay)

@@ -17,6 +17,4 @@ class NightMode(redView: ImageView, orangeView: ImageView, greenView: ImageView)
             orange.setColorFilter(colorGray);
         }, delay)
     }
-
-
 }
