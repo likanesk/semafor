@@ -10,20 +10,26 @@ class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
     val orangeLight = orange
     val greenLight = green
 
-    val normal :NormalMode = NormalMode()
-    val night : NightMode = NightMode()
+    val normal :NormalMode = NormalMode(redLight, orangeLight, greenLight)
+    val night : NightMode = NightMode(redLight, orangeLight, greenLight)
 
     //funkcia pre zapnutie normalneho(denneho) modu, ak je semafor zapnuty
     fun useNormalMode() {
         if (powerOn) {
-            normal.setNormalMode(redLight, orangeLight, greenLight)
+            normal.stop()
+            night.stop()
+            setBasicLights()
+            normal.start()
         }
     }
 
     //funkcia pre zapnutie nocneho modu, ak je semafor zapnuty
     fun useNightMode() {
         if (powerOn) {
-            night.setNightMode(orangeLight)
+            normal.stop()
+            night.stop()
+            setBasicLights()
+            night.setNightMode()
         }
     }
 
@@ -33,12 +39,16 @@ class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
             normal.stop()
             night.stop()
             powerOn = false
-            redLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
-            orangeLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
-            greenLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
+            setBasicLights()
         } else {
             powerOn = true
         }
+    }
+
+    fun setBasicLights() {
+        redLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
+        orangeLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
+        greenLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
     }
 }
 

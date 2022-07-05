@@ -1,21 +1,20 @@
 package com.example.semafor
 
-import android.graphics.Color
 import android.widget.ImageView
-import android.os.Handler
-import com.example.semafor.Colors
 
-class NightMode: Mode(1000) {
+class NightMode(redView: ImageView, orangeView: ImageView, greenView: ImageView): Mode(1000) {
+
+    override var red: ImageView = redView
+    override var orange: ImageView = orangeView
+    override var green: ImageView = greenView
 
     /**
      * funkcia pre blikanie oranzoveho svetla
      */
-    fun setNightMode(orange: ImageView) {
-
+    fun setNightMode() {
         orange.setColorFilter(colorOrange)
         handler.postDelayed({
             orange.setColorFilter(colorGray);
         }, delay)
     }
-
 }

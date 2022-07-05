@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val trafficLight: TrafficLight = TrafficLight(redView, orangeView, greenView)
+        var trafficLight: TrafficLight = TrafficLight(redView, orangeView, greenView)
 
         stopButton.setOnClickListener() {
             trafficLight.setPower()
