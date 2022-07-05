@@ -14,22 +14,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val nightMode: NightMode = NightMode()
+        val trafficLight: TrafficLight = TrafficLight(redView, orangeView, greenView)
 
-        /*pauseButton.setOnClickListener() {
-            repeat(10) {
-                nightMode.setNightMode(orangeView)
-            }
-        }*/
-
-        pauseButton.setOnClickListener() {
-            nightMode.setNightMode(orangeView)
+        stopButton.setOnClickListener() {
+            trafficLight.setPower()
         }
 
-        val normalMode: NormalMode = NormalMode()
-
         playButton.setOnClickListener() {
-            normalMode.setNormalMode(redView, orangeView, greenView)
+            trafficLight.useNormalMode()
+        }
+
+        pauseButton.setOnClickListener() {
+            trafficLight.useNightMode()
         }
 
     }
