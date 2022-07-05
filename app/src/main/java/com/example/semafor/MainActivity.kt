@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
         stopButton.setOnClickListener() {
             trafficLight.setPowerStatus()
+            trafficLight.night.stop()
+            trafficLight.normal.stop()
         }
 
         playButton.setOnClickListener() {
