@@ -5,7 +5,7 @@ import android.widget.ImageView
 
 class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
 
-    var powerOn = false;
+    var powerStatus = false
     val redLight = red
     val orangeLight = orange
     val greenLight = green
@@ -13,9 +13,11 @@ class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
     val normal :NormalMode = NormalMode(redLight, orangeLight, greenLight)
     val night : NightMode = NightMode(redLight, orangeLight, greenLight)
 
-    //funkcia pre zapnutie normalneho(denneho) modu, ak je semafor zapnuty
+    /**
+     * funkcia pre zapnutie normalneho(denneho) rezimu, ak je semafor zapnuty
+     */
     fun useNormalMode() {
-        if (powerOn) {
+        if (powerStatus) {
             normal.stop()
             night.stop()
             setBasicLights()
@@ -23,28 +25,35 @@ class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
         }
     }
 
-    //funkcia pre zapnutie nocneho modu, ak je semafor zapnuty
+    /**
+     * funkcia pre zapnutie nocneho rezimu, ak je semafor zapnuty
+     */
     fun useNightMode() {
-        if (powerOn) {
+        if (powerStatus) {
             normal.stop()
             night.stop()
             setBasicLights()
-            night.setNightMode()
+            night.start()
         }
     }
 
-    //funkcia nastavi semafor na vypnuty/zapnuty
-    fun setPower() {
-        if (powerOn) {
+    /**
+     * funkcia, ktora nastavi semafor na vypnuty/zapnuty
+     */
+    fun setPowerStatus() {
+        if (powerStatus) {
             normal.stop()
             night.stop()
-            powerOn = false
+            powerStatus = false
             setBasicLights()
         } else {
-            powerOn = true
+            powerStatus = true
         }
     }
 
+    /**
+     * funkcia pre nastavenie svetiel pri vypnutom semafore
+     */
     fun setBasicLights() {
         redLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
         orangeLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))

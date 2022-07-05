@@ -11,10 +11,12 @@ class NightMode(redView: ImageView, orangeView: ImageView, greenView: ImageView)
     /**
      * funkcia pre blikanie oranzoveho svetla
      */
-    fun setNightMode() {
+    override fun start() {
         orange.setColorFilter(colorOrange)
         handler.postDelayed({
             orange.setColorFilter(colorGray);
         }, delay)
     }
+
+
 }

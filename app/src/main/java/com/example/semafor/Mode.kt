@@ -15,6 +15,14 @@ abstract class Mode(var delay: Long) {
     abstract var orange: ImageView
     abstract var green: ImageView
 
+    /**
+     * abstraktna funkcia start() pre spravne fungovanie normalneho (denneho)/nocneho rezimu
+     */
+    abstract fun start()
+
+    /**
+     * funkcia stop() pre zastavanie vsetkych sprav a interakcii po kliknuti na tlacidlo
+     */
     fun stop() {
         handler.removeCallbacksAndMessages(null)
     }

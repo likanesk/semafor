@@ -11,7 +11,7 @@ class NormalMode(redView: ImageView, orangeView: ImageView, greenView: ImageView
     override var orange: ImageView = orangeView
     override var green: ImageView = greenView
 
-    fun start() {
+    override fun start() {
         runnable.run()
     }
 
