@@ -10,9 +10,9 @@ class NormalMode {
     val colorOrange:Int = Color.parseColor(Colors.ORANGE.rgb);
     val colorGreen:Int = Color.parseColor(Colors.GREEN.rgb);
     val colorGray:Int = Color.parseColor(Colors.GRAY.rgb);
+    var handler = Handler()
 
     fun setNormalMode(red: ImageView, orange: ImageView, green: ImageView) {
-        var handler = Handler()
         var delay:Long = 5000
 
         //TODO: Infinity loop with exception
@@ -40,5 +40,9 @@ class NormalMode {
             delay += 5000
         }
 
+    }
+
+    fun stop() {
+        handler.removeCallbacksAndMessages(null)
     }
 }

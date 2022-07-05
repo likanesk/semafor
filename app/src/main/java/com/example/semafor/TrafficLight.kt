@@ -1,5 +1,6 @@
 package com.example.semafor
 
+import android.graphics.Color
 import android.widget.ImageView
 
 class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
@@ -29,9 +30,14 @@ class TrafficLight(red: ImageView, orange: ImageView, green: ImageView) {
     //funkcia nastavi semafor na vypnuty/zapnuty
     fun setPower() {
         if (powerOn) {
-            powerOn = false;
+            normal.stop()
+            night.stop()
+            powerOn = false
+            redLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
+            orangeLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
+            greenLight.setColorFilter(Color.parseColor(Colors.GRAY.rgb))
         } else {
-            powerOn = true;
+            powerOn = true
         }
     }
 }
