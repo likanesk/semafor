@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/orangeView"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/greenView"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@+id/pauseButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +31,13 @@
         app:tint="#D3D3D3" />
 
     <Button
-        android:id="@+id/stopButton"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:background="@drawable/custom_button"
-        android:textAllCaps="false"
+
+    android:id="@+id/stopButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ic_stop"
         android:contentDescription="@string/app_name"
-        app:icon="@android:drawable/checkbox_off_background"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pauseButton"
         app:layout_constraintHorizontal_bias="0.795"
@@ -48,12 +48,11 @@
     <Button
 
         android:id="@+id/pauseButton"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:background="@drawable/custom_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ic_pause"
         android:contentDescription="@string/appbar_scrolling_view_behavior"
         android:textAlignment="center"
-        app:icon="@android:drawable/ic_media_pause"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -63,23 +62,22 @@
 
     <Button
         android:id="@+id/playButton"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/ic_play"
         android:contentDescription="@string/appbar_scrolling_view_behavior"
-        app:icon="@android:drawable/ic_media_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toEndOf="@+id/pauseButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717"
-        android:background="@drawable/custom_button"/>
+        app:layout_constraintVertical_bias="0.717" />
 
     <ImageView
         android:id="@+id/redView"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="244dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
