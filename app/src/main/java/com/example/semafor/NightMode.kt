@@ -5,23 +5,17 @@ import android.widget.ImageView
 import android.os.Handler
 import com.example.semafor.Colors
 
-class NightMode {
-    var handler = Handler()
+class NightMode: Mode(1000) {
 
     /**
      * funkcia pre blikanie oranzoveho svetla
      */
     fun setNightMode(orange: ImageView) {
-        val colorOrange:Int = Color.parseColor(Colors.ORANGE.rgb);
-        val colorGray:Int = Color.parseColor(Colors.GRAY.rgb);
 
         orange.setColorFilter(colorOrange)
         handler.postDelayed({
             orange.setColorFilter(colorGray);
-        }, 1000)
+        }, delay)
     }
 
-    fun stop() {
-        handler.removeCallbacksAndMessages(null)
-    }
 }
