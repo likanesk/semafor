@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/redView"
-        app:srcCompat="@android:drawable/radiobutton_off_background"
+        app:srcCompat="@drawable/ic_circle"
         app:tint="#D3D3D3" />
 
     <ImageView
@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orangeView"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/radiobutton_off_background"
+        app:srcCompat="@drawable/ic_circle"
         app:tint="#D3D3D3" />
 
     <Button
@@ -83,6 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/radiobutton_off_background"
+        app:srcCompat="@drawable/ic_circle"
         app:tint="#D3D3D3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
