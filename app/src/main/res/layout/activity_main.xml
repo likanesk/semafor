@@ -32,11 +32,13 @@
 
     <Button
 
-    android:id="@+id/stopButton"
+        android:id="@+id/stopButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/ic_stop"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/app_name"
+        android:foreground="@drawable/ic_stop"
+        android:foregroundTint="#2D3033"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pauseButton"
@@ -50,22 +52,26 @@
         android:id="@+id/pauseButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/ic_pause"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:foreground="@drawable/ic_pause"
+        android:foregroundTint="#2D3033"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717" />
 
     <Button
+
         android:id="@+id/playButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@drawable/ic_play"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/appbar_scrolling_view_behavior"
+        android:foreground="@drawable/ic_play"
+        android:foregroundTint="#2D3033"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
