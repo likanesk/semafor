@@ -9,24 +9,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var trafficLight: TrafficLight = TrafficLight(redView, orangeView, greenView)
+        val trafficLight = TrafficLight(redView, orangeView, greenView)
 
-        stopButton.setOnClickListener() {
+        stopButton.setOnClickListener {
             trafficLight.setPowerStatus()
             trafficLight.night.stop()
             trafficLight.normal.stop()
         }
 
-        playButton.setOnClickListener() {
+        playButton.setOnClickListener {
             trafficLight.useNormalMode()
             //automaticke spustanie tlacidla (neustale opakovanie cyklu po 17 sek.)
-            trafficLight.normal.handler.postDelayed(Runnable { playButton.performClick() }, 17000)
+            trafficLight.normal.handler.postDelayed({ playButton.performClick() }, 17000)
         }
 
-        pauseButton.setOnClickListener() {
+        pauseButton.setOnClickListener {
             trafficLight.useNightMode()
             //automaticke spustanie tlacidla (neustale opakovanie cyklu po 2 sek.)
-            trafficLight.night.handler.postDelayed(Runnable { pauseButton.performClick() }, 2000)
+            trafficLight.night.handler.postDelayed({ pauseButton.performClick() }, 2000)
         }
 
     }
