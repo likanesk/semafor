@@ -6,87 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/orangeView"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/redView"
-        app:srcCompat="@drawable/ic_circle"
-        app:tint="#D3D3D3" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/appbar_scrolling_view_behavior">
 
-    <ImageView
-        android:id="@+id/greenView"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/pauseButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orangeView"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_circle"
-        app:tint="#D3D3D3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
+            <ImageView
+                android:id="@+id/redView"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="130dp"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="#D3D3D3" />
 
-        android:id="@+id/stopButton"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/app_name"
-        android:foreground="@drawable/ic_stop"
-        android:foregroundTint="#2D3033"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/pauseButton"
-        app:layout_constraintHorizontal_bias="0.795"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+            <ImageView
+                android:id="@+id/orangeView"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="#D3D3D3" />
 
-    <Button
+            <ImageView
+                android:id="@+id/greenView"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="#D3D3D3" />
 
-        android:id="@+id/pauseButton"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
-        android:foreground="@drawable/ic_pause"
-        android:foregroundTint="#2D3033"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="97dp" />
 
-    <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        android:id="@+id/playButton"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/appbar_scrolling_view_behavior"
-        android:foreground="@drawable/ic_play"
-        android:foregroundTint="#2D3033"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintStart_toEndOf="@+id/pauseButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
-    <ImageView
-        android:id="@+id/redView"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_circle"
-        app:tint="#D3D3D3" />
+                <Button
+
+                    android:id="@+id/stopButton"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/app_name"
+                    android:foreground="@drawable/ic_stop"
+                    android:foregroundTint="#2D3033"
+                    android:textAllCaps="false" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15" />
+
+                <Button
+
+                    android:id="@+id/pauseButton"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/appbar_scrolling_view_behavior"
+                    android:foreground="@drawable/ic_pause"
+                    android:foregroundTint="#2D3033"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15" />
+
+                <Button
+
+                    android:id="@+id/playButton"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/appbar_scrolling_view_behavior"
+                    android:foreground="@drawable/ic_play"
+                    android:foregroundTint="#2D3033" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
